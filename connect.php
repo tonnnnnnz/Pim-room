@@ -1,6 +1,6 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "pim_room");
-// $conn = mysqli_connect("us-cdbr-east-04.cleardb.com", "bfabc0567aea2b", "02c742c2", "heroku_308157fed413263");
+// $conn = mysqli_connect("localhost", "root", "", "pim_room");
+$conn = mysqli_connect("us-cdbr-east-04.cleardb.com", "b97782d02d1446", "ced0486c", "heroku_11a0afe168f6dca");
 mysqli_set_charset($conn, 'utf8');
 if (!$conn) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
