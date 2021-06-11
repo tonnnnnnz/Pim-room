@@ -263,25 +263,25 @@ if ($meQuery == TRUE) {
                     <label class="starttime">เวลาใช้งาน</label>
                     <!-- <input name="starttime" type="time" class="starttime" value="<?php $starttime = date('H:i',strtotime($meResult2['start']));echo $starttime;?>" required> -->
                     <select class="starttime" id="starttime" name='starttime'required> 
-                        <option value="08:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '08:00:00') {echo 'selected';}?>>8:00 น.</option>
-                        <option value="08:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '08:30') {echo 'selected';}?>>8:30 น.</option>
-                        <option value="09:01"<?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '09:00') {echo 'selected';}?>>9:00 น.</option>
-                        <option value="09:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '09:30') {echo 'selected';}?>>9:30 น.</option>
-                        <option value="10:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '10:00') {echo 'selected';}?>>10:00 น.</option>
-                        <option value="10:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '10:30') {echo 'selected';}?>>10:30 น.</option>
-                        <option value="11:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '11:00') {echo 'selected';}?>>11:00 น.</option>
-                        <option value="11:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '11:30') {echo 'selected';}?>>11:30 น.</option>
-                        <option value="12:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '12:00') {echo 'selected';}?>>12:00 น.</option>
-                        <option value="12:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '12:30') {echo 'selected';}?>>12:30 น.</option>
-                        <option value="13:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '13:00') {echo 'selected';}?>>13:00 น.</option>
-                        <option value="13:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '13:30') {echo 'selected';}?>>13:30 น.</option>
-                        <option value="14:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '14:00') {echo 'selected';}?>>14:00 น.</option>
-                        <option value="14:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '14:30') {echo 'selected';}?>>14:30 น.</option>
-                        <option value="15:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '15:00') {echo 'selected';}?>>15:00 น.</option>
-                        <option value="15:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '15:30') {echo 'selected';}?>>15:30 น.</option>
-                        <option value="16:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '16:00') {echo 'selected';}?>>16:00 น.</option>
-                        <option value="16:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '16:30') {echo 'selected';}?>>16:30 น.</option>
-                        <option value="17:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '17:00') {echo 'selected';}?>>17:00 น.</option>
+                        <option value="08:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '08:01') {echo 'selected';}?>>8:00 น.</option>
+                        <option value="08:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '08:31') {echo 'selected';}?>>8:30 น.</option>
+                        <option value="09:01"<?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '09:01') {echo 'selected';}?>>9:00 น.</option>
+                        <option value="09:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '09:31') {echo 'selected';}?>>9:30 น.</option>
+                        <option value="10:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '10:01') {echo 'selected';}?>>10:00 น.</option>
+                        <option value="10:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '10:31') {echo 'selected';}?>>10:30 น.</option>
+                        <option value="11:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '11:01') {echo 'selected';}?>>11:00 น.</option>
+                        <option value="11:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '11:31') {echo 'selected';}?>>11:30 น.</option>
+                        <option value="12:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '12:01') {echo 'selected';}?>>12:00 น.</option>
+                        <option value="12:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '12:31') {echo 'selected';}?>>12:30 น.</option>
+                        <option value="13:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '13:01') {echo 'selected';}?>>13:00 น.</option>
+                        <option value="13:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '13:31') {echo 'selected';}?>>13:30 น.</option>
+                        <option value="14:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '14:01') {echo 'selected';}?>>14:00 น.</option>
+                        <option value="14:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '14:31') {echo 'selected';}?>>14:30 น.</option>
+                        <option value="15:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '15:01') {echo 'selected';}?>>15:00 น.</option>
+                        <option value="15:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '15:31') {echo 'selected';}?>>15:30 น.</option>
+                        <option value="16:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '16:01') {echo 'selected';}?>>16:00 น.</option>
+                        <option value="16:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '16:31') {echo 'selected';}?>>16:30 น.</option>
+                        <option value="17:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '17:01') {echo 'selected';}?>>17:00 น.</option>
                         <!-- <option value="17:30">17:30</option>
                         <option value="18:00">18:00</option>  -->
                     </select>
