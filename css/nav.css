@@ -156,13 +156,6 @@ a.list {
     box-shadow: 0 6px 6px -6px white;
 }
 
-/* a.list:hover {
-    border: #37356e 1px solid;
-    border-radius: 7px;
-    background-color: #37356e;
-    text-decoration: underline;
-} */
-
 .logo a:hover {
     text-decoration: none;
 }
