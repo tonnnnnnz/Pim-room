@@ -1,0 +1,118 @@
+/* fullcalendar */
+@media all and (min-width: 400px) {
+    .con-cal {
+        min-height: 9vh
+     }
+
+    #calendar {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .fc-daygrid-day-events {
+      font-size: 11px;
+    }
+
+    .fc th {
+      color: white;
+      background-color: #221f53;
+    }
+    .fc-event{
+      cursor: pointer;
+    }
+}
+
+
+/* popup */
+table, td, th { 
+    border: 1px solid #ddd; 
+    text-align: left; 
+    /* text-align: center; */
+} 
+
+table { 
+    border-collapse: collapse; 
+    width: 100%; 
+} 
+
+th {
+    width: 30%;
+}
+
+th, td { 
+    text-align: left; 
+    padding: 5px; 
+}
+  
+.guidance {
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.room {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 30px;
+}
+
+.identity {
+    text-decoration: underline;
+}
+
+.in {
+    display: flex;
+    width: 19px;
+    height: 20px;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    background-color: #006400;
+}
+
+.cancel {
+    display: block;
+    width: 19px;
+    height: 20px;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    background-color: #ad2121;
+}
+
+.wait {
+    display: block;
+    width: 19px;
+    height: 20px;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    background-color: #1e90ff;
+}
+
+.w3-modal-content {
+    background-color: #ffffff00;
+    width: 40%;
+}
+
+.w3-container {
+    padding: 10px;
+    /* border: solid 1px; */
+    background-color: white;
+}
+/* 
+.w3-button {
+    background-color: #ffffff00;
+} */
+

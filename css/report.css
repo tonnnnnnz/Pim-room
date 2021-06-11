@@ -1,0 +1,429 @@
+body {
+  max-height: 50vh;
+  width: auto;
+}
+.container-table100 {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+  }
+  
+  .wrap-table100 {
+    width: 1200px;
+  }
+
+  .table100 {
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .table-header, .entries {
+    padding: 10px 10px;
+  }
+
+  .flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 10px;
+  }
+  
+  table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+  }
+  table * {
+    position: relative;
+  }
+  table td, table th {
+    padding-left: 8px;
+  }
+  table thead tr {
+    height: 60px;
+    background: #4BB150;
+  }
+  table tbody tr {
+    height: 50px;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  table td, table th {
+    text-align: left;
+  }
+  table td.l, table th.l {
+    text-align: right;
+  }
+  table td.c, table th.c {
+    text-align: center;
+  }
+  table td.r, table th.r {
+    text-align: center;
+  }
+  
+  
+  .table100-head th{
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  tbody tr {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .column1 {
+    width: 100px;
+    padding-left: 40px;
+  }
+  
+  .column2 {
+    width: 200px;
+    text-align: center;
+  }
+
+  .column3 {
+    width: 300px;
+    text-align: center;
+  }
+  
+  .column4 {
+    width: 150px;
+    text-align: center;
+  }
+  
+  .column5 {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .column6 {
+    width:130px;
+    text-align: center;
+  }
+  
+  .column7 {
+    width: 130px;
+    text-align: center;
+  }
+
+  .column8 {
+    width: 100px;
+    text-align: center;
+  }
+
+  .column9 {
+    width: 100px;
+    text-align: right;
+    padding-right: 40px;
+  }
+
+  .approve {
+    color: green;
+  }
+
+  .disapprove {
+    color: red;
+  }
+
+  .wait {
+    color: black;
+  }
+
+  .edit {
+    text-decoration: none;
+    color: #10913b;
+  }
+
+  .delete {
+    text-decoration: none;
+    color: red;
+  }
+
+  /* edit */
+  form .edit{
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .container {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px 30px 30px;
+  }
+
+  .wrap-container {
+    width: 530px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  label.number{
+    margin-right: 3px;
+  }
+
+  label.name{
+    margin-right: 37px;
+  }
+
+  label.department{
+    margin-right: 58px;
+  }
+
+  label.topic{
+    margin-right: 16px;
+  }
+
+  label.date{
+    margin-right: 24px;
+  }
+
+  label.starttime{
+    /* margin-right: 23px; */
+    margin-right: 22px;
+  }
+
+  label.hour{
+    margin-right: 8px;
+  }
+
+  label.other{
+    margin-right: 68px;
+  }
+
+  label.state{
+    margin-right: 51px;
+  }
+
+  input, textarea, section, select{
+    border-style: hidden;
+    background-color: #f2f2f2;
+  }
+
+  .container-1-box {
+    flex-wrap: nowrap;
+    padding-bottom: 20px;
+  }
+
+  .container-1-box select{
+    width: 410px;
+    height: 30px;
+  }
+
+  .container-1-box .long{
+    width: 410px;
+    height: 30px;
+  }
+
+  .container-1-box .number{
+    width: 410px;
+    height: 30px;
+  }
+
+  .container-1-box .date, .starttime{
+    width: 409px;
+    height: 30px;
+  }
+
+  .container-1-box textarea{
+    width: 410px;
+    height: 100px;
+  }
+
+  .container-2-box {
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .btn-save {
+    background: #221f54;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-save:hover {
+    background: #03003f;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-cancel {
+    background: #ec1c24;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-cancel:hover {
+    background: #ff0008;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .substatus {
+    border-radius: 4px;
+    border: 1px solid #a09e9e;
+    background-color: #f2f2f2;
+    padding: 0px 2px 0px 2px;
+  }
+
+  .substatus:hover {
+    background-color: #c7c4c4;
+  }
+
+  .form-control.form-control-sm {
+    padding: 2px 0 2px 5px;
+    border: black solid 1px;
+  }
+
+  /* Desktop Menu */
+@media all and (min-width: 610px) {
+  .container-2-box {
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 99px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination a {
+color: black;
+float: left;
+padding: 8px 16px;
+text-decoration: none;
+}
+
+.pagination a.active { 
+color: white;
+border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+background-color: #ddd;
+border-radius: 5px;
+}
+
+/* exportExcel */
+.btnExport {
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+.buttonexcel {
+  border-radius: 4px;
+  /* background-color: #f4511e; */
+  background-color: #4BB150;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.buttonexcel span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonexcel span:after {
+  content: '\2B73';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonexcel:hover {
+  background: #3e9142;
+}
+
+.buttonexcel:hover span {
+  padding-right: 13px;
+}
+
+.buttonexcel:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #4BB150;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
