@@ -9,7 +9,7 @@ include '../connect.php';
 
 //เพิ่มข้อมูล
 if ($_GET['action']=='add'){
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $strYear = date('Y',strtotime($_POST['date']));
 $strMonth= date('m',strtotime($_POST['date']));
 $strDay= date('d',strtotime($_POST['date']));
@@ -28,20 +28,6 @@ if ($_POST['hour'] == '1') {
 	$endt = date('H:i:s', strtotime('+239 minutes', strtotime($_POST['starttime'])));
 }
 $enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
-
-	// $sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
-	// $meResult = $conn->query( $sql )->fetch_assoc() ;  
-
-	// $meSQL = "INSERT INTO tb_event (id_member,rooms,title,people,start,end,hour,member,department,other) VALUES ('".$_POST['memberid']."','".$_POST['idrooms']."','".$_POST['title']."','".$_POST['people']."','".$startdate."','".$enddate."','".$_POST['hour']."','".$_POST['member']."','".$_POST['department']."','".$_POST['other']."')";
-	// 		$meQuery = $conn->query($meSQL);		
-			
-// 			if ($meQuery == TRUE) {
-// 				echo "<script>alert('เพิ่มข้อมูลเสร็จเรียบร้อยแล้ว'); </script>"; //window.location ='../index.php?page=mybooking';
-// 			} else {
-// 				echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>"; 
-// 				exit();
-			
-// 			}	
 
 //เช็คห้อง
 $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}' AND status = '" . "1" . "'
