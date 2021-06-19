@@ -205,6 +205,7 @@ li.flag img {
 
 .item-button {
     order: 3;
+    display: none;
 }
 
 .flag {
@@ -228,6 +229,11 @@ li.flag img {
 }
 
 .item.active {
+    margin-left: 50px;
+    display: block;
+}
+
+.item-button.active {
     margin-left: 50px;
     display: block;
 }

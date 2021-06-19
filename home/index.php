@@ -21,7 +21,7 @@ $data = array();
 $query = "SELECT * FROM tb_event INNER JOIN tb_rooms ON tb_event.rooms=tb_rooms.id_rooms;";
 if ($event = $conn->query($query)) {
     while ($obj = $event->fetch_object()) {
-      if ($obj->status == 1) {
+      if ($obj->stastus == 0 || status == 1) {
         $data[] = array(
           'id' => $obj->id,
           'title'=> $obj->name_rooms,
@@ -34,51 +34,17 @@ if ($event = $conn->query($query)) {
             'amount' => $obj->people,
             'other' => $obj->other
           )
-      
+          
           );
-
-          // $json_data[] = [
-          //   'id' => $obj->id,
-          // 'title'=> $obj->name_rooms,
-          // 'start'=> $obj->start,
-          // 'end'=> $obj->end];
-      // echo '<pre>';
-      // print_r($json_data);
-      // echo '</pre>';
+          // echo '<pre>';
+          //   print_r($obj);
+          // echo '</pre>';
       }
       
     }
-    $event->close();
-    
+    $event->close();  
 }
-// echo '<pre>';
-//     print_r($data);
-//     echo '</pre>';
-// $data = array(); 
-// $query = "SELECT * FROM tb_event INNER JOIN tb_rooms ON tb_event.rooms=tb_rooms.id_rooms;";
-// $event = $conn->query($query);
-
-// while ($obj = $event->fetch_object()) {
-//     if ($obj->status == 1) {
-//     $data[] = array(
-//       'id' => $obj->id,
-//       'title'=> $obj->name_rooms,
-//       'start'=> $obj->start,
-//       'end'=> $obj->end,
-//       // 'color' => "#1e90ff"
-//       );
-
-//     // $json_data[] = [
-//     //     'id' => $obj->id,
-//     //     'title'=> $obj->name_rooms,
-//     //     'start'=> $obj->start,
-//     //     'end'=> $obj->end
-        
-//     // ];
-
-    
-//     }
-// }
+     
 ?>
 
 <!DOCTYPE html>
@@ -153,16 +119,6 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
 		      <li class="item-button"><a class="list" href="index.php?page=login">เข้าสู่ระบบ</a></li>
           
 <?php } ?>
-        <!-- <div class="lang-menu item">
-                <div class="selected-lang">
-                    <li class="item"><img src="images\multi_languages.png" style="width: 60%; height: 35px; margin-left:20px;"></a></li> 
-                </div>
-                <ul> 
-                    <li class="item"><a href="index.php?page=booking&lang=th"><img src="images/thailand.png" alt=""></a></li>
-                    <li class="item"><a href="index.php?page=booking&lang=en"><img src="images/united-kingdom.png" alt=""></a></li> 
-        </div> -->
-        <!-- <li class="item flag"><a href="#"><img src="images/thailand.png" alt="TH-flag"></a></li>	 -->
-        <!-- <li class="item flag"><a href="#"><img src="images/united-kingdom.png" alt="UK-Flag"></a></li> -->
 		    <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>	
       </ul>
   </nav>
@@ -177,10 +133,10 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
               <p class="in"></p>
               <p class="note">เข้าใช้งานแล้ว</p>
           </div>
-          <div class="room">
+          <!-- <div class="room">
               <p class="cancel"></p>
               <p class="note">ไม่เข้าใช้งาน</p>
-          </div>
+          </div> -->
           <div class="room">
               <p class="wait"></p>
               <p class="note">อนุมัติ/รอใช้งาน</p>

@@ -31,7 +31,8 @@ if ($_GET['action']=='add'){
 	$enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
 
 //เช็คห้อง
-$sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}' AND status = '" . "1" . "'
+$sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}' 
+		AND (status = '" . "0" . "' or status = '" . "1" . "')
 		AND (
 			(start BETWEEN '" . $startdate . "' AND '" . $enddate . "')
 			OR 
@@ -87,7 +88,8 @@ if ($_GET['action']=='edit'){
 		}
 	$enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
 
-	$sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}' AND status = '" . "1" . "'
+	$sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
+			AND (status = '" . "0" . "' or status = '" . "1" . "')
 			AND (
 				(start BETWEEN '" . $startdate . "' AND '" . $enddate . "')
 				OR 
