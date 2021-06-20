@@ -20,9 +20,6 @@
   .table-header, .entries {
     padding: 10px 10px;
   }
-  .table-header{
-    margin-left: 150px;
-  }
 
   .flex-container{
     display: flex;
