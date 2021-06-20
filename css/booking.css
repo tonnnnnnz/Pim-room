@@ -288,7 +288,7 @@ margin-left: 50px;
 } 
 }
 
-@media all and (max-width: 320px){
+@media all and (max-width: 400px){
   .container-2-box {
   padding-bottom: 10px;
   display: flex;
