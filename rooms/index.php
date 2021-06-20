@@ -110,7 +110,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                 <div class="table-header">
                     <h3>ห้องประชุม</h3>
                 </div>          
-                <table id = "datatables" class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+                <table id = "datatables" class="table table-bordered  display" cellspacing="0" width="100%">
                     <thead>
                         <tr class="table100-head">
                             <td class="column1">ลำดับ</td>

@@ -27,6 +27,8 @@ if ($_SESSION['status'] =='admin' || $_SESSION['status'] =='user' || $_SESSION['
     <link rel="stylesheet" href="css/booking.css">
     <link rel="icon" type="image" sizes="16x16" href="images/Logo_PIM.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+     -->
     <title><?php echo $title; ?></title>
 </head>
 <body>
@@ -87,7 +89,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
       </ul>
   </nav>
   <!-- End nav-bar  -->
-
+  
 <h3>จองห้องประชุม</h3>
     <div class="container">
         <div class="wrap-container">
@@ -121,7 +123,6 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                 </div> 
                 <div class="container-1-box">   
                     <label class="topic">วัตถุประสงค์</label>
-                    <!-- <input name="title" class="long" type="text" required> -->
                     <select name="title" id="title" required>
                         <option value="อ่าน/ติวหนังสือ" selected="selected">อ่าน/ติวหนังสือ</option>
                         <option value="ประชุมงาน/Presentงาน/ทำงานกลุ่ม">ประชุมงาน/Presentงาน/ทำงานกลุ่ม</option>
@@ -170,8 +171,6 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                         <option value="16:01">16:00 น.</option>
                         <option value="16:31">16:30 น.</option>
                         <option value="17:01">17:00 น.</option>
-                        <!-- <option value="17:30">17:30</option>
-                        <option value="18:00">18:00</option>  -->
                     </select>
                 </div>
                 <div class="container-1-box"> 
@@ -200,11 +199,21 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                     <input type="hidden" name="department" value="<?php echo $_SESSION['dep']?>" />
              <?php } ?> 
                 <div class="container-2-box">
-                    <button class="btn-save" type="submit">บันทึก</button>
+                    <button class="btn-save" type="submit" onclick="document.getElementById('id01').style.display='block'">บันทึก</button>
                     <button class="btn-cancel" type="button" onClick="javascript: window.history.back();">ยกเลิก</button>
                 </div>   
             </form>
         </div>
+
+        <!-- <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <p>Some text. Some text. Some text.</p>
+                <p>Some text. Some text. Some text.</p>
+            </div>
+            </div>
+        </div> -->
     </div> 
 
     <!-- Script for Raspon -->
