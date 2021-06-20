@@ -59,7 +59,7 @@ $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
 		$meSQL = "INSERT INTO tb_event (id_member,rooms,title,people,start,end,color,hour,member,department,other) VALUES ('".$_POST['memberid']."','".$_POST['idrooms']."','".$_POST['title']."','".$_POST['people']."','".$startdate."','".$enddate."','".$color."','".$_POST['hour']."','".$_POST['member']."','".$_POST['department']."','".$_POST['other']."')";
 		$meQuery = $conn->query($meSQL);		
 		if ($meQuery == TRUE) {
-			echo "<script>alert('เพิ่มข้อมูลเสร็จเรียบร้อยแล้ว'); window.location ='../index.php?page=mybooking';</script>"; 
+			echo "<script>alert('ยืนยันการจองสำเร็จ \\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน'); window.location ='../index.php?page=mybooking';</script>"; 
 		} else {
 			echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>"; 
 			exit();
@@ -119,7 +119,7 @@ if ($_GET['action']=='edit'){
 		$meSQL .= "WHERE id ='{$_POST['id']}' ";
 		$meQuery = $conn->query($meSQL);			
 			if ($meQuery == TRUE) {
-				echo "<script>alert('บันทึกข้อมูลเรียบร้อยแล้ว'); window.location ='../index.php?page=mybooking'; </script>";
+				echo "<script>alert('แก้ไขการจองสำเร็จ \\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน'); window.location ='../index.php?page=mybooking'; </script>";
 				} else {
 				echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>";
 				exit();
