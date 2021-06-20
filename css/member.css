@@ -753,3 +753,32 @@ border-radius: 5px;
   cursor: pointer;
   }
 }
+
+@media all and (max-width: 400px) { 
+
+  .container-1-box select{
+    width: 290px;
+    height: 30px;
+    }
+    
+    .container-1-box .long{
+    width: 290px;
+    height: 30px;
+    }
+    
+    .container-1-box .number{
+    width: 290px;
+    height: 30px;
+    }
+    
+    .container-1-box .date, .starttime{
+    width: 290px;
+    height: 30px;
+    }
+    
+    .container-1-box textarea{
+    width: 290px;
+    height: 100px;
+    }
+    
+}
