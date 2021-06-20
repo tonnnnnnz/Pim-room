@@ -207,27 +207,27 @@ padding-bottom: 20px;
 }
 
 .container-1-box select{
-width: 200px;
+width: 290px;
 height: 30px;
 }
 
 .container-1-box .long{
-width: 200px;
+width: 290px;
 height: 30px;
 }
 
 .container-1-box .number{
-width: 200px;
+width: 290px;
 height: 30px;
 }
 
 .container-1-box .date, .starttime, .hour{
-width: 200px;
+width: 290px;
 height: 30px;
 }
 
 .container-1-box textarea{
-width: 200px;
+width: 290px;
 height: 100px;
 }
 
@@ -289,64 +289,62 @@ margin-left: 50px;
 }
 
 @media all and (max-width: 320px){
+  .container-2-box {
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 200px;
+  flex-direction: row;
+  justify-content: space-between;
+  }
+
+  .btn-save {
+  background: #221f54;
+  text-align: center;
+  padding: 8px;
+  border-radius: 4px;
+  width: 80px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  }
+
+  .btn-save:hover {
+  background: #03003f;
+  text-align: center;
+  padding: 8px;
+  border-radius: 4px;
+  width: 80px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  }
 
 
-.container-2-box {
-padding-bottom: 10px;
-display: flex;
-flex-wrap: nowrap;
-width: 200px;
-flex-direction: row;
-justify-content: space-between;
-}
+  .btn-cancel {
+  background: #ec1c24;
+  text-align: center;
+  padding: 8px;
+  border-radius: 4px;
+  width: 80px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  }
+  .btn-cancel:hover {
+  background: #ff0008;
+  text-align: center;
+  padding: 8px;
+  border-radius: 4px;
+  width: 80px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  }
 
-.btn-save {
-background: #221f54;
-text-align: center;
-padding: 8px;
-border-radius: 4px;
-width: 80px;
-color: #fff;
-cursor: pointer;
-text-transform: uppercase;
-}
-
-.btn-save:hover {
-background: #03003f;
-text-align: center;
-padding: 8px;
-border-radius: 4px;
-width: 80px;
-color: #fff;
-cursor: pointer;
-text-transform: uppercase;
-}
-
-
-.btn-cancel {
-background: #ec1c24;
-text-align: center;
-padding: 8px;
-border-radius: 4px;
-width: 80px;
-color: #fff;
-cursor: pointer;
-text-transform: uppercase;
-}
-.btn-cancel:hover {
-background: #ff0008;
-text-align: center;
-padding: 8px;
-border-radius: 4px;
-width: 80px;
-color: #fff;
-cursor: pointer;
-text-transform: uppercase;
-}
-
-.form-input{
-margin-left: 20px;
-} 
+  .form-input{
+  margin-left: 20px;
+  } 
 }
 
 @media all and (max-width: 400px){
