@@ -401,6 +401,10 @@ border-radius: 5px;
 
 @media all and (max-width: 600px) { 
 
+  .table-header {
+    text-align: center;
+  }
+
   .container-table100 {
     width: none;
     min-height: none;
@@ -754,6 +758,10 @@ border-radius: 5px;
 }
 
 @media all and (max-width: 400px) { 
+
+  .table-header {
+    text-align: center;
+  }
 
   .container-1-box select{
     width: 290px;
