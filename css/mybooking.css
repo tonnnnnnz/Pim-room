@@ -636,6 +636,7 @@ cursor: pointer;
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 0;
   }
   
   .btn-save {
@@ -980,6 +981,7 @@ cursor: pointer;
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 0;
   }
   
   .btn-save {

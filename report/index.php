@@ -112,9 +112,9 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                     <label class="text-warning bigger-140 blue" for="link"> ค้นหาจากสถานะ </label>
                     <select class="selectstatus" name="selectstatus" onchange="this.options[this.selectedIndex].value; document.getElementsByClassName('substatus')[0].click();">
                         <option value="" <?php if ($_GET['report'] == '') {echo 'selected';} ?> >ทั้งหมด</option>
-                        <option value="0" <?php if ($_GET['report'] == '0') {echo 'selected';} ?> >รออนุมัติ</option>
-                        <option value="1" <?php if ($_GET['report'] == '1') {echo 'selected';} ?> >อนุมัติ</option>
-                        <option value="2" <?php if ($_GET['report'] == '2') {echo 'selected';} ?> >ไม่อนุมัติ</option>
+                        <option value="0" <?php if ($_GET['report'] == '0') {echo 'selected';} ?> >อนุมัติ/รอเข้าใช้งาน</option>
+                        <option value="1" <?php if ($_GET['report'] == '1') {echo 'selected';} ?> >เข้าใช้งาน</option>
+                        <option value="2" <?php if ($_GET['report'] == '2') {echo 'selected';} ?> >ไม่เข้าใช้งาน</option>
                         <option value="3" <?php if ($_GET['report'] == '3') {echo 'selected';} ?> >ยกเลิก</option>
                     </select>
                     <button class="substatus" type="submit" name="substatus" hidden> ค้นหา </button>
@@ -169,10 +169,10 @@ if (isset($_POST['substatus']))
                             <td class="column6"><?php $dateData=$rs['start']; echo thai_date(strtotime($dateData)); ?></td>
                             <td class="column7"><?php $startTime=$rs['start']; $endTime=$rs['end']; echo thai_time(strtotime($startTime)).'-'.thai_time(strtotime($endTime)); ?></td>
                             <td class="column8"><?php 
-                                if ($rs['status']=='1'){echo '<p class="approve">','อนุมัติ','</p>';} 
-                                else if ($rs['status']=='2'){echo '<p class="disapprove">','ไม่อนุมัติ','</p>';} 
+                                if ($rs['status']=='1'){echo '<p class="approve">','เข้าใช้งาน','</p>';} 
+                                else if ($rs['status']=='2'){echo '<p class="disapprove">','ไม่เข้าใช้งาน','</p>';} 
                                 else if ($rs['status']=='3'){echo '<p class="cancel">','ยกเลิก','</p>';} 
-                                else {echo '<p class="wait">','รออนุมัติ','</p>';}?>
+                                else {echo '<p class="wait">','อนุมัติ/รอเข้าใช้งาน','</p>';}?>
                             </td>
                             <td class="column9">
                                 <a class="edit" href="index.php?page=report&action=edit&id=<?php echo $rs['id']; ?>&report=<?php echo $_GET['report']; ?>">
