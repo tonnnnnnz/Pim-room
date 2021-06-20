@@ -350,6 +350,15 @@
 
   /* Desktop Menu */
 @media all and (min-width: 800px) {
+  .addButton a span:after {
+    content: '\002B';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
   .container-table100 {
     width: 100%;
     min-height: 80vh;
@@ -732,6 +741,15 @@
     flex-wrap: wrap;
   }
 
+  .addButton a span:after {
+    content: none;
+    position: none;
+    opacity: 0;
+    top: 0;
+    right: none;
+    transition: 0.5s;  
+   }
+
   .table100 {
     background-color: white;
     border-radius: 10px;
@@ -915,15 +933,15 @@
     position: relative;
     transition: 0.5s;
   }
-  
+
   .addButton a span:after {
-    content: '\002B';
-    position: absolute;
+    content: none;
+    position: none;
     opacity: 0;
     top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
+    right: none;
+    transition: 0.5s;  
+   }
   
   .addButton:hover {
     background: #3e9142;

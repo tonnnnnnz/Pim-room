@@ -993,7 +993,6 @@ cursor: pointer;
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
-  margin-left: 20px;
   }
   
   .btn-save:hover {
@@ -1016,7 +1015,6 @@ cursor: pointer;
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
-  margin-right: 15px;
   }
   
   .btn-cancel:hover {

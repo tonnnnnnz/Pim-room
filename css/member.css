@@ -399,7 +399,16 @@ border-radius: 5px;
 }
 
 
-@media all and (max-width: 600px) { 
+@media all and (max-width: 600px) {
+
+  .addButton a span:after {
+    content: none;
+    position: none;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+  }
 
   .table-header {
     text-align: center;
@@ -758,6 +767,15 @@ border-radius: 5px;
 }
 
 @media all and (max-width: 400px) { 
+
+  .addButton a span:after {
+    content: none;
+    position: none;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+  }
 
   .table-header {
     text-align: center;

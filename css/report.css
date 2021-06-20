@@ -1,5 +1,4 @@
- 
-  .wrap-table100 {
+ .wrap-table100 {
     width: auto;
   }
 
@@ -320,12 +319,109 @@
     border: black solid 1px;
   }
 
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  }
+  
+  .pagination a.active { 
+  color: white;
+  border-radius: 5px;
+  }
+  
+  .pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+  }
+  
+  /* exportExcel */
+  .btnExport {
+    text-align: right;
+    padding-bottom: 10px;
+  }
+  
+  .buttonexcel {
+    border-radius: 4px;
+    /* background-color: #f4511e; */
+    background-color: #4BB150;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  
+  .buttonexcel span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .buttonexcel span:after {
+    content: none;
+    position: none;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+  }
+  
+  .buttonexcel:hover {
+    background: #3e9142;
+  }
+  
+  .buttonexcel:hover span {
+    padding-right: 13px;
+  }
+  
+  .buttonexcel:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+  #btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+  }
+  
+  .btn-danger {
+    color: #fff;
+    background-color: #4BB150;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
   /* Desktop Menu */
 @media all and (min-width: 800px) {
   body {
     max-height: 50vh;
     width: auto;
   }
+
+  .buttonexcel span:after {
+    content: '\2B73';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
   .container-table100 {
       width: 100%;
       min-height: 100vh;
@@ -675,6 +771,15 @@
     margin-right: 210px;
   }
 
+  .buttonexcel span:after {
+    content: none;
+    position: none;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+  }
+
   .container {
     width: 100%;
     height: 85vh;
@@ -767,7 +872,6 @@
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 20px;
   }
 
   .btn-save {
@@ -779,7 +883,6 @@
     color: #fff;
     cursor: pointer;
     text-transform: uppercase;
-    margin-left: 20px; 
   }
 
   .btn-save:hover {
@@ -839,89 +942,3 @@
   }
 }
 
-.pagination {
-  display: flex;
-  justify-content: space-between;
-}
-
-.pagination a {
-color: black;
-float: left;
-padding: 8px 16px;
-text-decoration: none;
-}
-
-.pagination a.active { 
-color: white;
-border-radius: 5px;
-}
-
-.pagination a:hover:not(.active) {
-background-color: #ddd;
-border-radius: 5px;
-}
-
-/* exportExcel */
-.btnExport {
-  text-align: right;
-  padding-bottom: 10px;
-}
-
-.buttonexcel {
-  border-radius: 4px;
-  /* background-color: #f4511e; */
-  background-color: #4BB150;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 12px;
-  padding: 5px;
-  transition: all 0.5s;
-  cursor: pointer;
-}
-
-.buttonexcel span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.buttonexcel span:after {
-  content: '\2B73';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.buttonexcel:hover {
-  background: #3e9142;
-}
-
-.buttonexcel:hover span {
-  padding-right: 13px;
-}
-
-.buttonexcel:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-#btn-back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-}
-
-.btn-danger {
-  color: #fff;
-  background-color: #4BB150;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
