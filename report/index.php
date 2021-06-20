@@ -313,9 +313,9 @@ if ($meQuery == TRUE) {
                 <div class="container-1-box">
                     <label class="state" for="status" required> สถานะ </label>
                     <select name="status" id="status" >
-                        <option value="0" <?php if ($meResult2['status'] == '0') {echo 'selected';}?>>รออนุมัติ</option>
-                        <option value="1" <?php if ($meResult2['status'] == '1') {echo 'selected';}?>>อนุมัติ</option>
-                        <option value="2" <?php if ($meResult2['status'] == '2') {echo 'selected';}?>>ไม่อนุมัติ</option>
+                        <option value="0" <?php if ($meResult2['status'] == '0') {echo 'selected';}?>>อนุมัติ/รอเข้าใช้งาน</option>
+                        <option value="1" <?php if ($meResult2['status'] == '1') {echo 'selected';}?>>เข้าใช้งาน</option>
+                        <option value="2" <?php if ($meResult2['status'] == '2') {echo 'selected';}?>>ไม่เข้าใช้งาน</option>
                         <option value="3" <?php if ($meResult2['status'] == '3') {echo 'selected';}?>>ยกเลิก</option>
                     </select>
                 </div>
