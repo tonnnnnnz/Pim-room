@@ -666,7 +666,7 @@
   }
 }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 400px) {
   /* edit */
   form .edit{
     color: black;

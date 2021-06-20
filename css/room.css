@@ -725,7 +725,7 @@
   }
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 400px) {
   
   .wrap-table100 { 
     width: auto;
