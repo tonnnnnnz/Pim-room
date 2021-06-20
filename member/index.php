@@ -26,7 +26,12 @@ if ($_SESSION['status'] =='admin')
     <link rel="stylesheet" href="css/member.css">
     <link rel="icon" type="image" sizes="16x16" href="images/Logo_PIM.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    
+      <!--  Datatables  -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>  
+
+    <!--  extension responsive  -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
     <script src='fullcalendar-5.5.1/lib/main.js'></script>
     <title><?php echo $title; ?></title>
 </head>
@@ -105,7 +110,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                     <div class="table-header">
                         <h3>ระบบสมาชิก</h3>
                     </div>
-                    <table id = "datatables">
+                    <table id = "example"  class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                         <thead>
                             <tr class="table100-head">
                                 <th class="column1">ลำดับ</th>
@@ -326,16 +331,19 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
         }
         }
     </script>
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <!--   Datatables-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+      
+      <!-- extension responsive -->
+      <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('#datatables').DataTable({
+            $('#example').DataTable({
                 "pagingType" : "full_numbers",
                 "lengthMenu":[
                     [5,10,30,50,-1],
                     [5,10,30,50,"All"]
-                ],
+                ],   
                 responsive:true,
                 language:{
                     search: "_INPUT_",

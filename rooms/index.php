@@ -24,7 +24,12 @@ include 'connect.php';
     <link rel="stylesheet" href="css/room.css">
     <link rel="icon" type="image" sizes="16x16" href="images/Logo_PIM.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+      <!--  Datatables  -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>  
+
+<!--  extension responsive  -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+
     <script src='fullcalendar-5.5.1/lib/main.js'></script>
     <title><?php echo $title; ?></title>
 </head>
@@ -105,7 +110,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                 <div class="table-header">
                     <h3>ห้องประชุม</h3>
                 </div>          
-                <table id = "datatables">
+                <table id = "datatables" class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr class="table100-head">
                             <td class="column1">ลำดับ</td>
@@ -128,7 +133,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                                 <td class="column2">
                                     <p>
                                         <a href="images/<?php echo $rs['image_rooms']?>" data-rel="colorbox">
-                                        <img src="images/<?php echo $rs['image_rooms']?>" alt="รูปภาพ" style="width:220px;height:150px;">
+                                        <img src="images/<?php echo $rs['image_rooms']?>" alt="รูปภาพ" class="image_show">
                                     </p>
                                 </td>
                                 <td class="column3"><?php echo $rs['name_rooms']?></td>
@@ -167,7 +172,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
         <div class="container-1-box">   
             <label class="Upload" for="Upload">รูปภาพ</label>
             <input class="Upload" type="file" name="Upload" id="Upload" OnChange="showPreview(this)" accept="image/*" value="" >
-            <img class="Upload" id="imgAvatar" src="images/noimages.png" style="width:325px;height:180px;"><p></p>
+            <img class="Upload" id="imgAvatar" src="images/noimages.png" ><p></p>
         </div>
         <div class="container-1-box">   
             <label class="Room Name" for="Name">ชื่อห้อง</label>
@@ -209,7 +214,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
             <div class="container-1-box">   
                 <label class="Upload" for="Upload">รูปภาพ</label>
                 <input class="Upload" type="file" name="Upload" id="Upload" OnChange="showPreview(this)" accept="image/*" value="<?php echo $meResult['image_rooms'];?>">
-                <img class="Upload" id="imgAvatar" src="images/<?php echo $meResult['image_rooms'];?>" style="width:325px;height:180px;"><p></p>
+                <img class="Upload" id="imgAvatar" src="images/<?php echo $meResult['image_rooms'];?>"><p></p>
             </div>
             <div class="container-1-box">   
                 <label class="Room Name" for="Name">ชื่อห้อง</label>
@@ -238,8 +243,13 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="JS/script.js"></script>
     <script src="JS/back2top.js"></script>
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+     <!--   Datatables-->
+     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+      
+      <!-- extension responsive -->
+      <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+  
+  
     <script>
         $(document).ready(function(){
             $('#datatables').DataTable({

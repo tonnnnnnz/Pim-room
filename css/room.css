@@ -1,4 +1,356 @@
-.container-table100 {
+
+  .wrap-table100 { 
+    width: auto;
+    flex-wrap: wrap;
+  }
+
+  .table100 {
+    background-color: white;
+    border-radius: 10px;
+    /* box-shadow: 0 0 1px; */
+  }
+
+  .table-header, .entries {
+    padding: 10px 10px;
+    text-align: center;
+  }
+
+  .flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 10px;
+  }
+  
+  table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+  }
+  table * {
+    position: relative;
+  }
+  table td, table td {
+    padding-left: 8px;
+  }
+  table thead tr {
+    height: 60px;
+    background: #4BB150;
+  }
+  table tbody tr {
+    height: 50px;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  table td, table td {
+    text-align: left;
+  }
+  table td.l, table td.l {
+    text-align: right;
+  }
+  table td.c, table td.c {
+    text-align: center;
+  }
+  table td.r, table td.r {
+    text-align: center;
+  }
+  
+  
+  .table100-head td{
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  tbody tr {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .column1 {
+    width: 10px;
+    text-align: left;
+    /* padding-left: 10px; */
+  }
+  
+  .column2 {
+    /* border: solid 1px red; */
+    padding-top: 3px;
+    width: 10px;
+    text-align: center;
+  }
+  
+  .column3 {
+    width: 50px;
+    text-align: center;
+  }
+  
+  .column4 {
+    width: 50px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  
+  .column5 {
+    width: 80px;
+    text-align: center;
+  }
+
+  .column6 {
+    width: 5px;
+    text-align: center;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  }
+
+  .pagination a.active { 
+  color: white;
+  border-radius: 5px;
+  }
+
+  .pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+  }
+
+  .edit {
+    text-decoration: none;
+    color: #10913b;
+  }
+
+  .delete {
+    text-decoration: none;
+    color: red;
+  }
+
+  .btnAdd {
+    text-align: right;
+  }
+
+  button a.addroom {
+    text-decoration: none;
+  }
+
+  .addButton{
+    background-color: #4BB150;
+    border-radius: 4px;
+    border: none;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .addButton a span{
+    color: white;
+  }
+  
+  .addButton a span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .addButton a span:after {
+    content: '\002B';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .addButton:hover {
+    background: #3e9142;
+  }
+  
+  .addButton:hover a span {
+    padding-right: 13px;
+  }
+  
+  .addButton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  /* add */
+  h2.add ,h2.editroom{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .container {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px 30px 30px;
+  }
+  .wrap-container {
+    width: 530px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  label.Upload{
+    margin-right: 25px;
+  }
+
+  img.Upload {
+    margin-left: 25px;
+  }
+
+  label.Room.Name{
+    margin-right: 47px;
+  }
+
+  label.People{
+    margin-right: 31px;
+  }
+
+  label.Detail{
+    margin-right: 10px;
+  }
+  label textarea{
+    width: 100px; 
+  }
+  .image_show{ 
+    width: 220px;
+    height: 150px;
+  }
+
+  input, textarea, section, select{
+    border-style: hidden;
+    background-color: #f2f2f2;
+    padding-left: 5px;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .container-1-box {
+    flex-wrap: nowrap;
+    padding-bottom: 20px;
+  }
+
+  .container-1-box .Upload{
+    width: 350px;
+  }
+  .container-1-box  #imgAcatar{
+    width:325px;
+    height:180px;
+  }
+
+  .container-1-box .long{
+    width: 350px;
+    height: 30px;
+  }
+
+  .container-1-box textarea{
+    width: 350px;
+    height: 100px;
+  }
+
+  .container-2-box {
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .btn-save {
+    background: #221f54;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-save:hover {
+    background: #03003f;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-cancel {
+    background: #ec1c24;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-cancel:hover {
+    background: #ff0008;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  /* Desktop Menu */
+@media all and (min-width: 800px) {
+  .container-table100 {
     width: 100%;
     min-height: 80vh;
     background: white;
@@ -24,6 +376,7 @@
 
   .table-header, .entries {
     padding: 10px 10px;
+    text-align: center;
   }
 
   .flex-container{
@@ -32,6 +385,10 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 10px 10px;
+  }
+  .image_show{ 
+    width: 220px;
+    height: 150px;
   }
   
   table {
@@ -245,7 +602,7 @@
   }
 
   img.Upload {
-    margin-left: 185px;
+    margin-left: 100px;
   }
 
   label.Room.Name{
@@ -285,6 +642,10 @@
 
   .container-1-box .Upload{
     width: 410px;
+  }
+  .container #imgAcatar{
+    width:325px;
+    height:180px;
   }
 
   .container-1-box .long{
@@ -349,8 +710,11 @@
     text-transform: uppercase;
   }
 
-  /* Desktop Menu */
-@media all and (min-width: 610px) {
+  .table-header, .entries {
+    padding: 10px 10px;
+    text-align: left;
+  }
+
   .container-2-box {
     padding-bottom: 10px;
     display: flex;
@@ -358,6 +722,361 @@
     flex-direction: row;
     justify-content: space-between;
     padding-left: 99px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  
+  .wrap-table100 { 
+    width: auto;
+    flex-wrap: wrap;
+  }
+
+  .table100 {
+    background-color: white;
+    border-radius: 10px;
+    /* box-shadow: 0 0 1px; */
+  }
+
+  .table-header, .entries {
+    padding: 10px 10px;
+    text-align: center;
+  }
+
+  .flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 10px;
+  }
+  
+  table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+  }
+  table * {
+    position: relative;
+  }
+  table td, table td {
+    padding-left: 8px;
+  }
+  table thead tr {
+    height: 60px;
+    background: #4BB150;
+  }
+  table tbody tr {
+    height: 50px;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  table td, table td {
+    text-align: left;
+  }
+  table td.l, table td.l {
+    text-align: right;
+  }
+  table td.c, table td.c {
+    text-align: center;
+  }
+  table td.r, table td.r {
+    text-align: center;
+  }
+ 
+  
+  .table100-head td{
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  tbody tr {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+
+  
+  
+  .column1 {
+    width: 10px;
+    text-align: center;
+    /* padding-left: 10px; */
+  }
+  
+  .column2 {
+    /* border: solid 1px red; */
+    padding-top: 3px;
+    width: 10px;
+    text-align: center;
+  }
+  
+  .column3 {
+    width: 50px;
+    text-align: center;
+  }
+  
+  .column4 {
+    width: 50px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  
+  .column5 {
+    width: 150px;
+    text-align: center;
+  }
+
+  .column6 {
+    width: 5px;
+    text-align: center;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  }
+
+  .pagination a.active { 
+  color: white;
+  border-radius: 5px;
+  }
+
+  .pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+  }
+
+  .edit {
+    text-decoration: none;
+    color: #10913b;
+  }
+
+  .delete {
+    text-decoration: none;
+    color: red;
+  }
+
+  .btnAdd {
+    text-align: right;
+  }
+
+  button a.addroom {
+    text-decoration: none;
+  }
+
+  .addButton{
+    background-color: #4BB150;
+    border-radius: 4px;
+    border: none;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .addButton a span{
+    color: white;
+  }
+  
+  .addButton a span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .addButton a span:after {
+    content: '\002B';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .addButton:hover {
+    background: #3e9142;
+  }
+  
+  .addButton:hover a span {
+    padding-right: 13px;
+  }
+  
+  .addButton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  /* add */
+  h2.add ,h2.editroom{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .container {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px 30px 30px;
+  }
+  .wrap-container {
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  label.Upload{
+    margin-right: 40px;
+  }
+
+  img.Upload {
+    margin-left: 90px;
+  }
+
+  label.Room.Name{
+    margin-right: 38px;
+  }
+
+  label.People{
+    margin-right: 22px;
+  }
+
+  label.Detail{
+    margin-right: 10px;
+  }
+  label textarea{
+    width: 100px; 
+  }
+
+  input, textarea, section, select{
+    border-style: hidden;
+    background-color: #f2f2f2;
+    padding-left: 5px;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .container-1-box {
+    flex-wrap: nowrap;
+    padding-bottom: 20px;
+  }
+
+  .container-1-box .Upload{
+    width: 180px;
+  }
+  .container-1-box  #imgAcatar{
+    width:200px;
+    height:180px;
+  }
+  .container-1-box #imgAvatar{
+    width: 200px;
+    height: 180px;
+  }
+
+  .container-1-box .long{
+    width: 180px;
+    height: 30px;
+  }
+
+  .container-1-box textarea{
+    width: 180px;
+    height: 100px;
+  }
+
+  .container-2-box {
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .btn-save {
+    background: #221f54;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 100px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-left: 30px;
+  }
+
+  .btn-save:hover {
+    background: #03003f;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 100px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-cancel {
+    background: #ec1c24;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 100px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-cancel:hover {
+    background: #ff0008;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    width: 100px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
   }
 }
 

@@ -83,16 +83,6 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
 		      <li class="item-button"><a class="list" href="index.php?page=login">เข้าสู่ระบบ</a></li>
           
 <?php } ?>
-
-<!-- <div class="lang-menu item">
-                <div class="selected-lang">
-                    <li class="item"><img src="images\multi_languages.png" style="width: 60%; height: 35px; margin-left:20px;"></a></li> 
-                </div>
-                <ul> 
-                    <li class="item"><a href="index.php?page=booking&lang=th"><img src="images/thailand.png" alt=""></a></li>
-                    <li class="item"><a href="index.php?page=booking&lang=en"><img src="images/united-kingdom.png" alt=""></a></li> 
-            </div> -->
-
 		      <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>	
       </ul>
   </nav>

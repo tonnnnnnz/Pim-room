@@ -21,12 +21,13 @@ $data = array();
 $query = "SELECT * FROM tb_event INNER JOIN tb_rooms ON tb_event.rooms=tb_rooms.id_rooms;";
 if ($event = $conn->query($query)) {
     while ($obj = $event->fetch_object()) {
-      if ($obj->stastus == 0 || status == 1) {
+      if ($obj->status == 0 || $obj->status == 1) {
         $data[] = array(
           'id' => $obj->id,
           'title'=> $obj->name_rooms,
           'start'=> $obj->start,
           'end'=> $obj->end,
+          "color"=> $obj->color,
           'extendedProps' => array(
             'department' => $obj->department,
             'name' => $obj->member,
@@ -130,16 +131,12 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
       <div class="guidance">
           <p class="identity">สีสถานะการเข้าใช้งาน</p>
           <div class="room">
+              <p class="wait"></p>
+              <p class="note">อนุมัต/รอใช้งาน</p>
+          </div>
+          <div class="room">
               <p class="in"></p>
               <p class="note">เข้าใช้งานแล้ว</p>
-          </div>
-          <!-- <div class="room">
-              <p class="cancel"></p>
-              <p class="note">ไม่เข้าใช้งาน</p>
-          </div> -->
-          <div class="room">
-              <p class="wait"></p>
-              <p class="note">อนุมัติ/รอใช้งาน</p>
           </div>
       </div> 
 

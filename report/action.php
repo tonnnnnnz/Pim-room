@@ -10,9 +10,6 @@ include '../function.php';
 
 //แก้ไขข้อมูล
 if ($_GET['action']=='edit'){
-// $sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
-// $meResult = $conn->query( $sql )->fetch_assoc() ;   
-
 $strYear = date('Y',strtotime($_POST['date']));
 $strMonth= date('m',strtotime($_POST['date']));
 $strDay= date('d',strtotime($_POST['date']));
@@ -32,6 +29,14 @@ if ($_POST['hour'] == '1') {
 }
 $enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
 
+if($_POST['status'] == 0){
+	$color = '#1e90ff';
+} else if ($_POST['status'] == 1) {
+	$color = '#4BB150';
+} else {
+	$color = '#ad2121';
+}
+
 $sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
 		$meResult = $conn->query( $sql )->fetch_assoc() ;    
 
@@ -40,6 +45,7 @@ $sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
 		. "title='{$_POST['title']}',"
 		. "start='{$startdate}',"
 		. "end='{$enddate}',"
+		. "color='{$color}',"
 		. "hour='{$_POST['hour']}',"
 		. "people='{$_POST['people']}',"
 		. "other='{$_POST['other']}',"
@@ -55,49 +61,6 @@ $sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
 				echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>";
 				exit();
 			}
-
-// $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
-// 		AND (status = '" . "0" . "' or status = '" . "1" . "')
-// 		AND (
-// 			(start BETWEEN '" . $startdate . "' AND '" . $enddate . "')
-// 			OR 
-// 			(end BETWEEN '" . $startdate . "' AND '" . $enddate . "')
-// 			OR 
-// 			('" . $startdate . "' BETWEEN start  AND end)
-// 			OR 
-// 			('" . $enddate . "' BETWEEN  start  AND end )
-// 		)";
-
-// 	$meResult = $conn->query( $sql )->fetch_assoc() ; 
-
-// 	if($row = $meResult){
-// 		// echo "ห้องมีผู้ใช้งาน ช่วงเวลา ". $_POST['starttime'].':00' ." - ". $endt ." น. กรุณาตรวจสอบอีกครั้ง!";
-// 		echo "<script>alert('ห้องประชุมมีผู้ใช้งานในช่วงเวลา ". $_POST['starttime'].':00' ." - ". $endt ." น. กรุณาตรวจสอบอีกครั้ง!'); history.back(-1);</script>";
-// 	} else {
-// 		$sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
-// 		$meResult = $conn->query( $sql )->fetch_assoc() ;    
-
-// 		$meSQL = "UPDATE tb_event ";
-// 		$meSQL .="SET rooms='{$_POST['idrooms']}',"
-// 		. "title='{$_POST['title']}',"
-// 		. "start='{$startdate}',"
-// 		. "end='{$enddate}',"
-// 		. "hour='{$_POST['hour']}',"
-// 		. "people='{$_POST['people']}',"
-// 		. "other='{$_POST['other']}',"
-// 		. "status='{$_POST['status']}' ";
-
-// 		$meSQL .= "WHERE id ='{$_POST['id']}' ";
-// 		$meQuery = $conn->query($meSQL);			
-// 			if ($meQuery == TRUE) {
-// 				if ($_GET['report'] != '') {
-// 					echo "<script>alert('บันทึกข้อมูลเรียบร้อยแล้ว'); window.location ='../index.php?page=report&report=".$_GET['report']."';</script>";
-// 					} else { echo "<script>alert('บันทึกข้อมูลเรียบร้อยแล้ว'); window.location ='../index.php?page=report';</script>"; }
-// 			} else {
-// 				echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>";
-// 				exit();
-// 			}
-// 	}
 }	
 
 //ลบข้อมูล

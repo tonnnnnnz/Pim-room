@@ -30,6 +30,8 @@ if ($_GET['action']=='add'){
 		}
 	$enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
 
+	$color = '#1e90ff';
+
 //เช็คห้อง
 $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}' 
 		AND (status = '" . "0" . "' or status = '" . "1" . "')
@@ -49,13 +51,12 @@ $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
 	// print_r($meResult);
 	// echo '</pre>';
 	if($row = $meResult){
-		// echo "ห้องมีผู้ใช้งาน ช่วงเวลา ". $_POST['starttime'].':00' ." - ". $endt ." น. กรุณาตรวจสอบอีกครั้ง!";
 		echo "<script>alert('ห้องประชุมมีผู้ใช้งานในช่วงเวลา ". $_POST['starttime'].':00' ." - ". $endt ." น. กรุณาตรวจสอบอีกครั้ง!'); history.back(-1);</script>";
 	} else {
 		$sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
 		$meResult = $conn->query( $sql )->fetch_assoc() ;  
 
-		$meSQL = "INSERT INTO tb_event (id_member,rooms,title,people,start,end,hour,member,department,other) VALUES ('".$_POST['memberid']."','".$_POST['idrooms']."','".$_POST['title']."','".$_POST['people']."','".$startdate."','".$enddate."','".$_POST['hour']."','".$_POST['member']."','".$_POST['department']."','".$_POST['other']."')";
+		$meSQL = "INSERT INTO tb_event (id_member,rooms,title,people,start,end,color,hour,member,department,other) VALUES ('".$_POST['memberid']."','".$_POST['idrooms']."','".$_POST['title']."','".$_POST['people']."','".$startdate."','".$enddate."','".$color."','".$_POST['hour']."','".$_POST['member']."','".$_POST['department']."','".$_POST['other']."')";
 		$meQuery = $conn->query($meSQL);		
 		if ($meQuery == TRUE) {
 			echo "<script>alert('เพิ่มข้อมูลเสร็จเรียบร้อยแล้ว'); window.location ='../index.php?page=mybooking';</script>"; 
@@ -130,10 +131,14 @@ if ($_GET['action']=='edit'){
 //เปลี่ยนสถานะ
 if ($_GET['action']=='change'){
 		if ($_GET['status']=='0'){
-			$meSQL = "UPDATE tb_event SET status='3'";
+			$meSQL = "UPDATE tb_event ";
+			$meSQL .="SET status='3',"
+			. "color='#ad2121'";
 		} else if($_GET['status']=='3'){
-			$meSQL = "UPDATE tb_event SET status='0'";
-}
+			$meSQL = "UPDATE tb_event ";
+			$meSQL .="SET status='0',"
+			. "color='#1e90ff'";
+		}
 $meSQL .= "WHERE id ='{$_GET['id']}' ";
 $meQuery = $conn->query($meSQL);			
 	if ($meQuery == TRUE) {
