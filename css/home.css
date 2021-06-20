@@ -59,7 +59,7 @@ th, td {
 }
 
 .identity {
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 .in {

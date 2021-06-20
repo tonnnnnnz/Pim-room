@@ -129,7 +129,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
   <div class="con-cal">
       <div id='calendar'></div>
       <div class="guidance">
-          <p class="identity">สีสถานะการเข้าใช้งาน</p>
+          <p class="identity">สถานะการเข้าใช้งาน</p>
           <div class="room">
               <p class="wait"></p>
               <p class="note">อนุมัต/รอใช้งาน</p>
