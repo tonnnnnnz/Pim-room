@@ -10,10 +10,10 @@
   .table-header, .entries {
     padding: 10px 10px;
   }
-  .table-header{
-    margin-left: 160px;
-  }
 
+  .table-header {
+    text-align: left;
+  }
 
   .flex-container{
     display: flex;
@@ -440,12 +440,13 @@
       background-color: white;
       border-radius: 10px;
     }
+
+    .table-header {
+      text-align: center;
+    }
   
     .table-header, .entries {
       padding: 10px 10px;
-    }
-    .table-header  {
-      margin-left: auto;
     }
   
     .flex-container{
@@ -937,8 +938,9 @@
   .table-header, .entries {
     padding: 10px 10px;
   }
-  .table-header{
-    margin-left: 115px;
+
+  .table-header {
+    padding-left: 130px;
   }
 }
 
