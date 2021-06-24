@@ -61,6 +61,7 @@ $password = $_POST['password'];
 			$_SESSION['type'] = $data[0]['LOGINTYPE'];
 			$_SESSION['firstname_th'] = $data[0]['FIRSTNAME_TH'];
 			$_SESSION['lastname_th'] = $data[0]['LASTNAME_TH'];
+			$_SESSION['email'] = $data[0]['EMAIL'];
 			$_SESSION['card_no'] = $data[0]['CARD_NO'];
 			$_SESSION['dep'] = $data[0]['DEPARTMENT_NAME'];
 			$_SESSION['level_name'] = $data[0]['LEVELNAME'];

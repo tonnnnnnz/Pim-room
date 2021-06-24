@@ -5,7 +5,15 @@ if ($_SESSION['status']!='admin' and $_SESSION['status']!='user' and $_SESSION['
 	exit();
 } else {
 include '../connect.php'; 
+include '../function.php';
 }
+
+//ใช้สำหรับ Form Email
+$meSQL = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}'";
+$meResult = $conn->query($meSQL)->fetch_assoc();
+$room = $meResult['name_rooms'];
+$email = $_POST['email'];
+$date = thai_date(strtotime($_POST['date']));
 
 //เพิ่มข้อมูล
 if ($_GET['action']=='add'){
@@ -14,19 +22,20 @@ if ($_GET['action']=='add'){
 	$strYear = date('Y',strtotime($_POST['date']));
 	$strMonth= date('m',strtotime($_POST['date']));
 	$strDay= date('d',strtotime($_POST['date']));
-	$startdate = $strYear.'-'.$strMonth.'-'.$strDay.'T'.$_POST['starttime'].':00';
+	$startdate = $strYear.'-'.$strMonth.'-'.$strDay.'T'.$_POST['starttime'];
+	$startt = $_POST['starttime'];
 
 	$endstrYear = date('Y',strtotime($_POST['date']));
 	$endstrMonth= date('m',strtotime($_POST['date']));
 	$endstrDay= date('d',strtotime($_POST['date']));
 		if ($_POST['hour'] == '1') {
-			$endt = date('H:i:s', strtotime('+59 minutes', strtotime($_POST['starttime'])));
+			$endt = date('H:i', strtotime('+59 minutes', strtotime($_POST['starttime'])));
 		} else if ($_POST['hour'] == '2') {
-			$endt = date('H:i:s', strtotime('+119 minutes', strtotime($_POST['starttime'])));
+			$endt = date('H:i', strtotime('+119 minutes', strtotime($_POST['starttime'])));
 		} else if ($_POST['hour'] == '3') {
-			$endt = date('H:i:s', strtotime('+179 minutes', strtotime($_POST['starttime'])));
+			$endt = date('H:i', strtotime('+179 minutes', strtotime($_POST['starttime'])));
 		} else {
-			$endt = date('H:i:s', strtotime('+239 minutes', strtotime($_POST['starttime'])));
+			$endt = date('H:i', strtotime('+239 minutes', strtotime($_POST['starttime'])));
 		}
 	$enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
 
@@ -46,12 +55,8 @@ $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
 		)";
 
 	$meResult = $conn->query( $sql )->fetch_assoc() ; 
-	// echo '<pre>';
-	// print_r($sql);
-	// print_r($meResult);
-	// echo '</pre>';
 	if($row = $meResult){
-		echo "<script>alert('ห้องประชุมมีผู้ใช้งานในช่วงเวลา ". $_POST['starttime'].':00' ." - ". $endt ." น. กรุณาตรวจสอบอีกครั้ง!'); history.back(-1);</script>";
+		echo "<script>alert('ห้องประชุมมีผู้ใช้งานในช่วงเวลา ". $_POST['starttime'] ." - ". $endt ." น. กรุณาตรวจสอบอีกครั้ง!'); history.back(-1);</script>";
 	} else {
 		$sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
 		$meResult = $conn->query( $sql )->fetch_assoc() ;  
@@ -59,7 +64,9 @@ $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
 		$meSQL = "INSERT INTO tb_event (id_member,rooms,title,people,start,end,color,hour,member,department,other) VALUES ('".$_POST['memberid']."','".$_POST['idrooms']."','".$_POST['title']."','".$_POST['people']."','".$startdate."','".$enddate."','".$color."','".$_POST['hour']."','".$_POST['member']."','".$_POST['department']."','".$_POST['other']."')";
 		$meQuery = $conn->query($meSQL);		
 		if ($meQuery == TRUE) {
-			echo "<script>alert('ยืนยันการจองสำเร็จ \\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน'); window.location ='../index.php?page=mybooking';</script>"; 
+			$sub = "ยืนยันข้อมูลการจองห้องประชุม";
+			require("send_email.php");
+			echo "<script>alert('ยืนยันการจองสำเร็จ \\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน'); window.location ='../index.php?page=mybooking';</script>";
 		} else {
 			echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>"; 
 			exit();
@@ -73,19 +80,20 @@ if ($_GET['action']=='edit'){
 	$strYear = date('Y',strtotime($_POST['date']));
 	$strMonth= date('m',strtotime($_POST['date']));
 	$strDay= date('d',strtotime($_POST['date']));
-	$startdate = $strYear.'-'.$strMonth.'-'.$strDay.'T'.$_POST['starttime']; //.':00'
+	$startdate = $strYear.'-'.$strMonth.'-'.$strDay.'T'.$_POST['starttime'];
+	$startt = $_POST['starttime'];
 
 	$endstrYear = date('Y',strtotime($_POST['date']));
 	$endstrMonth= date('m',strtotime($_POST['date']));
 	$endstrDay= date('d',strtotime($_POST['date']));
 		if ($_POST['hour'] == '1') {
-			$endt = date('H:i:s', strtotime('+59 minutes', strtotime($_POST['starttime'])));
+			$endt = date('H:i', strtotime('+59 minutes', strtotime($_POST['starttime'])));
 		} else if ($_POST['hour'] == '2') {
-			$endt = date('H:i:s', strtotime('+119 minutes', strtotime($_POST['starttime'])));
+			$endt = date('H:i', strtotime('+119 minutes', strtotime($_POST['starttime'])));
 		} else if ($_POST['hour'] == '3') {
-			$endt = date('H:i:s', strtotime('+179 minutes', strtotime($_POST['starttime'])));
+			$endt = date('H:i', strtotime('+179 minutes', strtotime($_POST['starttime'])));
 		} else {
-			$endt = date('H:i:s', strtotime('+239 minutes', strtotime($_POST['starttime'])));
+			$endt = date('H:i', strtotime('+239 minutes', strtotime($_POST['starttime'])));
 		}
 	$enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
 
@@ -103,7 +111,7 @@ if ($_GET['action']=='edit'){
 
 	$meResult = $conn->query( $sql )->fetch_assoc() ; 
 	if($row = $meResult){
-		echo "<script>alert('ห้องประชุมมีผู้ใช้งานในช่วงเวลา ". $_POST['starttime'].':00' ." - ". $endt ." น. กรุณาตรวจสอบอีกครั้ง!'); history.back(-1);</script>";
+		echo "<script>alert('ห้องประชุมมีผู้ใช้งานในช่วงเวลา ". $_POST['starttime'] ." - ". $endt ." น. กรุณาตรวจสอบอีกครั้ง!'); history.back(-1);</script>";
 	} else {
 		$sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
 		$meResult = $conn->query( $sql )->fetch_assoc() ;  
@@ -119,6 +127,8 @@ if ($_GET['action']=='edit'){
 		$meSQL .= "WHERE id ='{$_POST['id']}' ";
 		$meQuery = $conn->query($meSQL);			
 			if ($meQuery == TRUE) {
+				$sub = "แก้ไขข้อมูลการจองห้องประชุม";
+				require("send_email.php");
 				echo "<script>alert('แก้ไขการจองสำเร็จ \\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน'); window.location ='../index.php?page=mybooking'; </script>";
 				} else {
 				echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>";

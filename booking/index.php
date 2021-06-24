@@ -194,9 +194,11 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
              <?php if ($_SESSION['status'] =='admin')  { ?>
                     <input type="hidden" name="memberid" value="<?php echo $rs['id_member'];?>" />
                     <input type="hidden" name="department" value="<?php echo "เจ้าหน้าที่ห้องสมุด";?>" />
+                    <input type="hidden" name="email" value="<?php echo $rs['email'];?>" />
             <?php } else {?>
                     <input type="hidden" name="memberid" value="<?php echo $_SESSION['card_no'];?>" />
                     <input type="hidden" name="department" value="<?php echo $_SESSION['dep']?>" />
+                    <input type="hidden" name="email" value="<?php echo $_SESSION['email'];?>" />
              <?php } ?> 
                 <div class="container-2-box">
                     <button class="btn-save" type="submit" onclick="document.getElementById('id01').style.display='block'">บันทึก</button>
@@ -204,16 +206,6 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                 </div>   
             </form>
         </div>
-
-        <!-- <div id="id01" class="w3-modal">
-            <div class="w3-modal-content">
-            <div class="w3-container">
-                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                <p>Some text. Some text. Some text.</p>
-                <p>Some text. Some text. Some text.</p>
-            </div>
-            </div>
-        </div> -->
     </div> 
 
     <!-- Script for Raspon -->

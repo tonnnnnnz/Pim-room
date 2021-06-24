@@ -132,11 +132,9 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
                                 <td class="column1"><?php echo $i++; ?></td>
                                 <td class="column2"><?php echo $rs['name_rooms']; ?></td>
                                 <td class="column3"><?php echo $rs['title']; ?></td>
-                                <td class="column4"><?php $dateData = $rs['start'];
-                                                    echo thai_date(strtotime($dateData)); ?></td>
+                                <td class="column4"><?php $dateData = $rs['start']; echo thai_date(strtotime($dateData)); ?></td>
                                 <td class="column5"><?php $startTime = $rs['start'];
-                                                    $endTime = $rs['end'];
-                                                    echo thai_time(strtotime($startTime)) . '-' . thai_time(strtotime($endTime)); ?></td>
+                                                          $endTime = $rs['end'];echo thai_time(strtotime($startTime)) . '-' . thai_time(strtotime($endTime)); ?></td>
                                 <td class="column6">
                                     <?php
                                     if ($rs['status'] == '1') {
@@ -211,9 +209,11 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
                     <?php if ($_SESSION['status'] == 'admin') { ?>
                         <input type="text" name="membershow" placeholder="" class="long" value="<?php echo $rs['firstname'] . '  ' . $rs['surname']; ?>" disabled />
                         <input type="hidden" name="member" value="<?php echo $rs['firstname'] . '  ' . $rs['surname']; ?>" />
+                        <input type="hidden" name="email" value="<?php echo $rs['email'];?>" />
                     <?php } else { ?>
                         <input type="text" name="membershow" placeholder="" class="long" value="<?php echo ($_SESSION['firstname_th'] . ' ' . $_SESSION['lastname_th']); ?>" disabled />
                         <input type="hidden" name="member" value="<?php echo ($_SESSION['firstname_th'] . ' ' . $_SESSION['lastname_th']); ?>" />
+                        <input type="hidden" name="email" value="<?php echo $_SESSION['email'];?>" />
                     <?php } ?>
                 </div>
                 <div class="container-1-box">
@@ -275,8 +275,7 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
                 </div>
                 <div class="container-1-box">
                     <label class="date">วันที่ใช้งาน</label>
-                    <input name="date" class="date" type="date" value="<?php $start = date('Y-m-d', strtotime($meResult2['start']));
-                                                                        echo $start; ?>" required>
+                    <input name="date" class="date" type="date" value="<?php $start = date('Y-m-d', strtotime($meResult2['start'])); echo $start; ?>" required>
                 </div>
                 <div class="container-1-box">
                     <label class="starttime">เวลาใช้งาน</label>

@@ -13,19 +13,19 @@ if ($_GET['action']=='edit'){
 $strYear = date('Y',strtotime($_POST['date']));
 $strMonth= date('m',strtotime($_POST['date']));
 $strDay= date('d',strtotime($_POST['date']));
-$startdate = $strYear.'-'.$strMonth.'-'.$strDay.'T'.$_POST['starttime'].':00';
+$startdate = $strYear.'-'.$strMonth.'-'.$strDay.'T'.$_POST['starttime'];
 
 $endstrYear = date('Y',strtotime($_POST['date']));
 $endstrMonth= date('m',strtotime($_POST['date']));
 $endstrDay= date('d',strtotime($_POST['date']));
 if ($_POST['hour'] == '1') {
-	$endt = date('H:i:s', strtotime('+59 minutes', strtotime($_POST['starttime'])));
+	$endt = date('H:i', strtotime('+59 minutes', strtotime($_POST['starttime'])));
 } else if ($_POST['hour'] == '2') {
-	$endt = date('H:i:s', strtotime('+119 minutes', strtotime($_POST['starttime'])));
+	$endt = date('H:i', strtotime('+119 minutes', strtotime($_POST['starttime'])));
 } else if ($_POST['hour'] == '3') {
-	$endt = date('H:i:s', strtotime('+179 minutes', strtotime($_POST['starttime'])));
+	$endt = date('H:i', strtotime('+179 minutes', strtotime($_POST['starttime'])));
 } else {
-	$endt = date('H:i:s', strtotime('+239 minutes', strtotime($_POST['starttime'])));
+	$endt = date('H:i', strtotime('+239 minutes', strtotime($_POST['starttime'])));
 }
 $enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
 
