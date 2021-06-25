@@ -17,7 +17,7 @@ $gmail_password = '123456pim'; // รหัสผ่าน gmail
 
 
 $sender = 'PIM Room Reservation'; // ชื่อผู้ส่ง
-$email_sender = 'noreply@pimroom.com'; // เมล์ผู้ส่ง 
+$email_sender = 'pim.room.reservation@gmail.com'; // เมล์ผู้ส่ง 
 $email_receiver = $email; // เมล์ผู้รับ ***
 $subject = $sub; // หัวข้อเมล์
 
