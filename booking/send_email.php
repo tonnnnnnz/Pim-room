@@ -11,13 +11,13 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 
-$gmail_username = "pim.room.reservation@gmail.com"; // gmail ที่ใช้ส่ง
-$gmail_password = "123456pim"; // รหัสผ่าน gmail
+$gmail_username = 'pim.room.reservation@gmail.com'; // gmail ที่ใช้ส่ง
+$gmail_password = '123456pim'; // รหัสผ่าน gmail
 // ตั้งค่าอนุญาตการใช้งานได้ที่นี่ https://myaccount.google.com/lesssecureapps?pli=1
 
 
-$sender = "PIM Room Reservation"; // ชื่อผู้ส่ง
-$email_sender = "noreply@pimroom.com"; // เมล์ผู้ส่ง 
+$sender = 'PIM Room Reservation'; // ชื่อผู้ส่ง
+$email_sender = 'noreply@pimroom.com'; // เมล์ผู้ส่ง 
 $email_receiver = $email; // เมล์ผู้รับ ***
 $subject = $sub; // หัวข้อเมล์
 
