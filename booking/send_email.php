@@ -29,9 +29,9 @@ $mail->addAddress($email_receiver);
 $mail->Subject = $subject;
 
 // $email_content = "วันที่".$date ."\n";
-$email_content = "
+$email_content = '
 	test
-";
+';
 
 //  ถ้ามี email ผู้รับ
 if($email_receiver){
