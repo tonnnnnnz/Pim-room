@@ -65,8 +65,7 @@ $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
 		$meQuery = $conn->query($meSQL);		
 		if ($meQuery == TRUE) {
 			$sub = "ยืนยันข้อมูลการจองห้องประชุม";
-			include 'send_email.php';
-			// require("send_email.php");
+			// include 'send_email.php';
 			echo "<script>alert('ยืนยันการจองสำเร็จ \\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน'); window.location ='../index.php?page=mybooking';</script>";
 		} else {
 			echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>"; 
@@ -129,13 +128,12 @@ if ($_GET['action']=='edit'){
 		$meQuery = $conn->query($meSQL);			
 			if ($meQuery == TRUE) {
 				$sub = "แก้ไขข้อมูลการจองห้องประชุม";
-				include 'send_email.php';
-				// require("send_email.php");
+				// include 'send_email.php';
 				echo "<script>alert('แก้ไขการจองสำเร็จ \\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน'); window.location ='../index.php?page=mybooking'; </script>";
-				} else {
+			} else {
 				echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>";
 				exit();
-				}
+			}
 	} 
 }	
 

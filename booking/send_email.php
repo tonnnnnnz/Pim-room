@@ -6,7 +6,7 @@ $mail = new PHPMailer;
 $mail->CharSet = "utf-8";
 $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
-$mail->Port = 25;
+$mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
