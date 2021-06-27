@@ -61,7 +61,7 @@ $sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
 		$sql = "SELECT * FROM tb_rooms WHERE id_rooms = '{$_POST['idrooms']}' ";
 		$meResult = $conn->query( $sql )->fetch_assoc() ;  
 
-		$meSQL = "INSERT INTO tb_event (id_member,rooms,title,people,start,end,color,hour,member,department,other) VALUES ('".$_POST['memberid']."','".$_POST['idrooms']."','".$_POST['title']."','".$_POST['people']."','".$startdate."','".$enddate."','".$color."','".$_POST['hour']."','".$_POST['member']."','".$_POST['department']."','".$_POST['other']."')";
+		$meSQL = "INSERT INTO tb_event (id_member,status,rooms,title,people,start,end,color,hour,member,department,other) VALUES ('".$_POST['memberid']."','0','".$_POST['idrooms']."','".$_POST['title']."','".$_POST['people']."','".$startdate."','".$enddate."','".$color."','".$_POST['hour']."','".$_POST['member']."','".$_POST['department']."','".$_POST['other']."')";
 		$meQuery = $conn->query($meSQL);		
 		if ($meQuery == TRUE) {
 			$sub = "ยืนยันข้อมูลการจองห้องประชุม";
@@ -99,6 +99,7 @@ if ($_GET['action']=='edit'){
 	$enddate = $endstrYear.'-'.$endstrMonth.'-'.$endstrDay.'T'.$endt;
 
 	$sql ="SELECT * FROM tb_event  WHERE rooms = '{$_POST['idrooms']}'
+			AND id != '{$_POST['id']}'
 			AND (status = '" . "0" . "' or status = '" . "1" . "')
 			AND (
 				(start BETWEEN '" . $startdate . "' AND '" . $enddate . "')
@@ -122,15 +123,16 @@ if ($_GET['action']=='edit'){
 		. "title='{$_POST['title']}',"
 		. "start='{$startdate}',"
 		. "end='{$enddate}',"
+		. "color='{$color}',"
 		. "hour='{$_POST['hour']}',"
 		. "people='{$_POST['people']}',"
-		. "other='{$_POST['other']}' ";
+		. "other='{$_POST['other']}'";
 		$meSQL .= "WHERE id ='{$_POST['id']}' ";
 		$meQuery = $conn->query($meSQL);			
 			if ($meQuery == TRUE) {
 				$sub = "แก้ไขข้อมูลการจองห้องประชุม";
 				// include 'send_email.php';
-				echo "<script>alert('แก้ไขการจองห้องประชุม ".$room."\\nวันที่ ".$date." เวลา ".$startt." - ".$endt." น. สำเร็จ\\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน'); window.location ='../index.php?page=mybooking'; </script>";
+				echo "<script>alert('แก้ไขการจองห้องประชุม ".$room."\\nวันที่ ".$date." เวลา ".$startt." - ".$endt." น. สำเร็จ\\nกรุณาติดต่อเคาน์เตอร์บริการก่อนเข้าใช้งาน');  window.location ='../index.php?page=mybooking';</script>";
 			} else {
 				echo "<script>alert('มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่'); history.back(-1);</script>";
 				exit();

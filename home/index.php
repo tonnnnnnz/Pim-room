@@ -37,15 +37,11 @@ if ($event = $conn->query($query)) {
           )
           
           );
-          // echo '<pre>';
-          //   print_r($obj);
-          // echo '</pre>';
       }
       
     }
     $event->close();  
-}
-     
+}  
 ?>
 
 <!DOCTYPE html>

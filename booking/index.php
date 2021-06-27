@@ -201,7 +201,7 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                     <input type="hidden" name="email" value="<?php echo $_SESSION['email'];?>" />
              <?php } ?> 
                 <div class="container-2-box">
-                    <button class="btn-save" type="submit" onclick="document.getElementById('id01').style.display='block'">บันทึก</button>
+                    <button class="btn-save" type="submit">บันทึก</button>
                     <button class="btn-cancel" type="button" onClick="javascript: window.history.back();">ยกเลิก</button>
                 </div>   
             </form>

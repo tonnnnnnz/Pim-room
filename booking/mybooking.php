@@ -243,32 +243,29 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
                 </div>
                 <div class="container-1-box">
                     <label class="amount">จำนวนผู้เข้าใช้</label>
-                    <select name="people" id="room" required>
-                        <!-- <option value="<?php echo $meResult2['people']; ?> <?php if ($meResult['people'] == $meResult2['people']) {
-                                                                                    echo 'selected';
-                                                                                } ?>"><?php echo $meResult2['people']; ?></option> -->
-                        <option value="1" <?php if ($meResult2['people'] == '1') {
+                    <select name="people" id="people" required>
+                        <option value="1" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '1') {
                                                 echo 'selected';
                                             } ?>>1</option>
-                        <option value="2" <?php if ($meResult2['people'] == '2') {
+                        <option value="2" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '2') {
                                                 echo 'selected';
                                             } ?>>2</option>
-                        <option value="3" <?php if ($meResult2['people'] == '3') {
+                        <option value="3" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '3') {
                                                 echo 'selected';
                                             } ?>>3</option>
-                        <option value="4" <?php if ($meResult2['people'] == '4') {
+                        <option value="4" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '4') {
                                                 echo 'selected';
                                             } ?>>4</option>
-                        <option value="5" <?php if ($meResult2['people'] == '5') {
+                        <option value="5" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '5') {
                                                 echo 'selected';
                                             } ?>>5</option>
-                        <option value="6" <?php if ($meResult2['people'] == '6') {
+                        <option value="6" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '6') {
                                                 echo 'selected';
                                             } ?>>6</option>
-                        <option value="7" <?php if ($meResult2['people'] == '7') {
+                        <option value="7" data-filter='{"room": "1"}' <?php if ($meResult2['people'] == '7') {
                                                 echo 'selected';
                                             } ?>>7</option>
-                        <option value="8" <?php if ($meResult2['people'] == '8') {
+                        <option value="8" data-filter='{"room": "1"}' <?php if ($meResult2['people'] == '8') {
                                                 echo 'selected';
                                             } ?>>8</option>
                     </select>
@@ -282,16 +279,16 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
                     <!-- <input name="starttime" type="time" class="starttime" value="<?php $starttime = date('H:i', strtotime($meResult2['start']));
                                                                                         echo $starttime; ?>" required> -->
                     <select class="starttime" id="starttime" name='starttime' required>
-                        <option value="8:01" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '08:01') {
+                        <option value="08:01" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '08:01') {
                                                     echo 'selected';
                                                 } ?>>8:00 น.</option>
-                        <option value="8:31" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '08:31') {
+                        <option value="08:31" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '08:31') {
                                                     echo 'selected';
                                                 } ?>>8:30 น.</option>
-                        <option value="9:01" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '09:01') {
+                        <option value="09:01" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '09:01') {
                                                     echo 'selected';
                                                 } ?>>9:00 น.</option>
-                        <option value="9:31" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '09:31') {
+                        <option value="09:31" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '09:31') {
                                                     echo 'selected';
                                                 } ?>>9:30 น.</option>
                         <option value="10:01" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '10:01') {
@@ -339,8 +336,6 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
                         <option value="17:01" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '17:01') {
                                                     echo 'selected';
                                                 } ?>>17:00 น.</option>
-                        <!-- <option value="17:30">17:30</option>
-                        <option value="18:00">18:00</option>  -->
                     </select>
                 </div>
                 <div class="container-1-box">
@@ -389,6 +384,7 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
 
 <!-- extension responsive -->
 <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
 <script src="JS/back2top.js"></script>
 <script>
     $(document).ready(function() {
@@ -406,6 +402,26 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
         });
     })
 </script>
+<script>
+        localStorage.setItem('room', 'select');
+            $('#room').on('change', function() {
+                var val = $(this).val();
+                localStorage.setItem('room', val);
+                $('select#people>option').each(function () {
+                    var filter = $(this).data();
+                    var elem = $(this);
+                    if((filter.filter.room != val) && filter.filter.room !="")  {
+                    elem.hide();
+                    $('#people').val("4");
+                    } else if(filter.filter.room !="") {
+                    elem.show();
+                    $('#people').val("6");
+                    } else {
+                    elem.show();
+                    }
+                });
+            });
+    </script>
 
 </body>
 
