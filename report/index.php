@@ -239,7 +239,6 @@ if ($meQuery == TRUE) {
                 </div> 
                 <div class="container-1-box">   
                     <label class="topic">วัตถุประสงค์</label>
-                    <!-- <input name="title" class="long" value="<?php echo $meResult2['title'];?>" required> -->
                     <select name="title" id="title" required>
                         <option value="อ่าน/ติวหนังสือ" <?php if ($meResult2['title'] == 'อ่าน/ติวหนังสือ') {echo 'selected';}?>>อ่าน/ติวหนังสือ</option>
                         <option value="ประชุมงาน/Presentงาน/ทำงานกลุ่ม" <?php if ($meResult2['title'] == 'ประชุมงาน/Presentงาน/ทำงานกลุ่ม') {echo 'selected';}?>>ประชุมงาน/Presentงาน/ทำงานกลุ่ม</option>
@@ -250,15 +249,15 @@ if ($meQuery == TRUE) {
                 </div> 
                 <div class="container-1-box"> 
                     <label class="amount">จำนวนผู้เข้าใช้</label>
-                    <select name="people" id="room" required>
-                        <option value="1" <?php if ($meResult2['people'] == '1') {echo 'selected';}?>>1</option>
-                        <option value="2" <?php if ($meResult2['people'] == '2') {echo 'selected';}?>>2</option>
-                        <option value="3" <?php if ($meResult2['people'] == '3') {echo 'selected';}?>>3</option>
-                        <option value="4" <?php if ($meResult2['people'] == '4') {echo 'selected';}?>>4</option>
-                        <option value="5" <?php if ($meResult2['people'] == '5') {echo 'selected';}?>>5</option>
-                        <option value="6" <?php if ($meResult2['people'] == '6') {echo 'selected';}?>>6</option>
-                        <option value="7" <?php if ($meResult2['people'] == '7') {echo 'selected';}?>>7</option>
-                        <option value="8" <?php if ($meResult2['people'] == '8') {echo 'selected';}?>>8</option>
+                    <select name="people" id="people" required>
+                        <option value="1" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '1') {echo 'selected';}?>>1</option>
+                        <option value="2" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '2') {echo 'selected';}?>>2</option>
+                        <option value="3" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '3') {echo 'selected';}?>>3</option>
+                        <option value="4" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '4') {echo 'selected';}?>>4</option>
+                        <option value="5" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '5') {echo 'selected';}?>>5</option>
+                        <option value="6" data-filter='{"room": ""}' <?php if ($meResult2['people'] == '6') {echo 'selected';}?>>6</option>
+                        <option value="7" data-filter='{"room": "1"}' <?php if ($meResult2['people'] == '7') {echo 'selected';}?>>7</option>
+                        <option value="8" data-filter='{"room": "1"}' <?php if ($meResult2['people'] == '8') {echo 'selected';}?>>8</option>
                     </select>
                 </div>
                 <div class="container-1-box">
@@ -267,11 +266,10 @@ if ($meQuery == TRUE) {
                 </div>
                 <div class="container-1-box"> 
                     <label class="starttime">เวลาใช้งาน</label>
-                    <!-- <input name="starttime" type="time" class="starttime" value="<?php $starttime = date('H:i',strtotime($meResult2['start']));echo $starttime;?>" required> -->
                     <select class="starttime" id="starttime" name='starttime'required> 
                         <option value="08:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '08:01') {echo 'selected';}?>>8:00 น.</option>
                         <option value="08:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '08:31') {echo 'selected';}?>>8:30 น.</option>
-                        <option value="09:01"<?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '09:01') {echo 'selected';}?>>9:00 น.</option>
+                        <option value="09:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '09:01') {echo 'selected';}?>>9:00 น.</option>
                         <option value="09:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '09:31') {echo 'selected';}?>>9:30 น.</option>
                         <option value="10:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '10:01') {echo 'selected';}?>>10:00 น.</option>
                         <option value="10:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '10:31') {echo 'selected';}?>>10:30 น.</option>
@@ -288,8 +286,6 @@ if ($meQuery == TRUE) {
                         <option value="16:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '16:01') {echo 'selected';}?>>16:00 น.</option>
                         <option value="16:31" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '16:31') {echo 'selected';}?>>16:30 น.</option>
                         <option value="17:01" <?php if ($starttime = date('H:i',strtotime($meResult2['start'])) == '17:01') {echo 'selected';}?>>17:00 น.</option>
-                        <!-- <option value="17:30">17:30</option>
-                        <option value="18:00">18:00</option>  -->
                     </select>
                 </div>
                 <div class="container-1-box"> 
@@ -372,6 +368,26 @@ if ($meQuery == TRUE) {
                   containerid: "datatables"
                   ,datatype: 'table'
               });
+            });
+    </script>
+    <script>
+        localStorage.setItem('room', 'select');
+            $('#room').on('change', function() {
+                var val = $(this).val();
+                localStorage.setItem('room', val);
+                $('select#people>option').each(function () {
+                    var filter = $(this).data();
+                    var elem = $(this);
+                    if((filter.filter.room != val) && filter.filter.room !="")  {
+                    elem.hide();
+                    $('#people').val("4");
+                    } else if(filter.filter.room !="") {
+                    elem.show();
+                    $('#people').val("6");
+                    } else {
+                    elem.show();
+                    }
+                });
             });
     </script>
 </body>

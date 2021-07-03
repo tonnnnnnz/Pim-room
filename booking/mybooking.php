@@ -276,8 +276,6 @@ if ($_SESSION['status'] == 'admin' || $_SESSION['status'] == 'user' || $_SESSION
                 </div>
                 <div class="container-1-box">
                     <label class="starttime">เวลาใช้งาน</label>
-                    <!-- <input name="starttime" type="time" class="starttime" value="<?php $starttime = date('H:i', strtotime($meResult2['start']));
-                                                                                        echo $starttime; ?>" required> -->
                     <select class="starttime" id="starttime" name='starttime' required>
                         <option value="08:01" <?php if ($starttime = date('H:i', strtotime($meResult2['start'])) == '08:01') {
                                                     echo 'selected';

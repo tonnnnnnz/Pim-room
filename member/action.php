@@ -18,16 +18,15 @@ date_default_timezone_set('Asia/Bangkok');
 		echo "<script>alert('รหัสผ่านต้องมากกว่า 6 ตัวอักษร'); history.back(-1);</script>";
 		exit();
     }
-	if($_POST["password"] != $_POST["conpassword"])
-	{
+	if($_POST["password"] != $_POST["conpassword"]){
 		echo "<script>alert('รหัสผ่านไม่ตรงกัน'); window.history.back();</script>";
 		exit();
     }
-        	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
-	{
+	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 		echo "<script>alert('อีเมลล์ไม่ถูกต้อง');history.back(-1);</script>";
 		exit();
     }
+	
 	$meSQL = "SELECT * FROM tb_member WHERE username = '".trim($_POST['username'])."' ";
 	$meQuery = $conn->query($meSQL);
 	$meResult = mysqli_fetch_array($meQuery,MYSQLI_ASSOC);

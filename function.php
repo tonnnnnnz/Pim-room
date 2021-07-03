@@ -31,7 +31,7 @@ $thai_month_arr_short=array(
     "11"=>"พ.ย.",     
     "12"=>"ธ.ค."                       
 );     
-function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวลา 10:10:43  
+function thai_date_and_time($time){   // 19 ธันวาคม 2564 เวลา 10:10:43  
     global $thai_day_arr,$thai_month_arr;     
     @$thai_date_return.=date("j",$time);     
     @$thai_date_return.=" ".$thai_month_arr[date("n",$time)];     
@@ -40,14 +40,14 @@ function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวล
     return $thai_date_return;     
 }
 
-function thai_date($time){   // 19 ธันวาคม 2556 เวลา 10:10:43  
+function thai_date($time){   // 19 ธันวาคม 2564  
     global $thai_day_arr,$thai_month_arr;     
     @$thai_date_return.=date("j",$time);     
     @$thai_date_return.=" ".$thai_month_arr[date("n",$time)];     
     @$thai_date_return.= " ".(date("Y",$time)+543);     
     return $thai_date_return;     
 }
-function thai_time($time){   // 19 ธันวาคม 2556 เวลา 10:10:43  
+function thai_time($time){   // เวลา 10:10:00  
     global $thai_day_arr,$thai_month_arr;     
     @$thai_date_return.= " ".date("H:i:s",$time)." น.";     
     return $thai_date_return;     

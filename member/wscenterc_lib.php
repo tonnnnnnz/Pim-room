@@ -26,23 +26,4 @@ $obj  = @$data;
 // echo '<pre>';
 // print_r($obj);
 // echo '</pre>';
-
-// echo '<pre>';
-// print_r($client);
-// echo '</pre>';
-
-// echo '<pre>';
-// print_r($data[0]['FIRSTNAME_TH']);
-// echo '</pre>';
-
-// echo 'Return Array : ';
-// echo '<pre>';
-// print_r($obj);
-// echo '</pre>';
-
-// echo 'Return Json : ';
-// $j = json_encode($obj);
-// echo '<pre>';
-// print_r($j);
-// echo '</pre>';
 ?>

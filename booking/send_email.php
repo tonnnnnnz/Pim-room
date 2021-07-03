@@ -28,7 +28,6 @@ $mail->setFrom($email_sender, $sender);
 $mail->addAddress($email_receiver);
 $mail->Subject = $subject;
 
-// $email_content = "วันที่".$date ."\n";
 $email_content = "
 <!DOCTYPE html>
 <html>

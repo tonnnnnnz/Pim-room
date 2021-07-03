@@ -27,8 +27,6 @@ if ($_SESSION['status'] =='admin' || $_SESSION['status'] =='user' || $_SESSION['
     <link rel="stylesheet" href="css/booking.css">
     <link rel="icon" type="image" sizes="16x16" href="images/Logo_PIM.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-     -->
     <title><?php echo $title; ?></title>
 </head>
 <body>
@@ -150,7 +148,6 @@ echo ($_SESSION['firstname_th'].' '.$_SESSION['lastname_th']);
                 </div>
                 <div class="container-1-box"> 
                     <label class="starttime">เวลาใช้งาน</label>
-                    <!-- <input name="starttime" type="time" class="starttime" required> -->
                     <select class="starttime" id="starttime" name='starttime'required> 
                         <option value="08:01">08:00 น.</option>
                         <option value="08:31">08:30 น.</option>
